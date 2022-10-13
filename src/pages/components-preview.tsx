@@ -1,0 +1,314 @@
+import React, { ReactNode } from 'react'
+import { Button, Card, Divider, Spinner, Switch } from '@/shared/ui'
+import Image from 'next/image'
+import image from '../../public/photo.jpg'
+
+interface ComponentsPreview {}
+
+const Component = ({
+  children,
+  title
+}: {
+  children: ReactNode
+  title: string
+}) => (
+  <div className='flex flex-col items-center gap-2 text-center'>
+    <p className='text-primary-hover bg-primary/5'>{title}</p>
+    {children}
+  </div>
+)
+
+const Row = ({ children }: { children: ReactNode }) => (
+  <div className='mb-7 flex align-top justify-center gap-5 '>{children}</div>
+)
+
+export const ComponentsPreview = (props: ComponentsPreview) => {
+  return (
+    <>
+      <>
+        <Row>
+          <Component title='contained'>
+            <Button>Button</Button>
+          </Component>
+
+          <Component title='outline'>
+            <Button variant='outline'>Button</Button>
+          </Component>
+
+          <Component title='text'>
+            <Button variant='text'>Button</Button>
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='with start icon'>
+            <Button
+              startIcon={
+                <svg
+                  aria-hidden='true'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z'></path>
+                </svg>
+              }
+            >
+              Button
+            </Button>
+          </Component>
+
+          <Component title='outline'>
+            <Button
+              variant='outline'
+              startIcon={
+                <svg
+                  aria-hidden='true'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z'></path>
+                </svg>
+              }
+            >
+              Button
+            </Button>
+          </Component>
+
+          <Component title='text'>
+            <Button
+              variant='text'
+              startIcon={
+                <svg
+                  aria-hidden='true'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d='M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z'></path>
+                </svg>
+              }
+            >
+              Button
+            </Button>
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='contained'>
+            <Button
+              endIcon={
+                <svg
+                  aria-hidden='true'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                    clipRule='evenodd'
+                  ></path>
+                </svg>
+              }
+            >
+              Button
+            </Button>
+          </Component>
+
+          <Component title='outline'>
+            <Button
+              variant='outline'
+              endIcon={
+                <svg
+                  aria-hidden='true'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                    clipRule='evenodd'
+                  ></path>
+                </svg>
+              }
+            >
+              Button
+            </Button>
+          </Component>
+
+          <Component title='text'>
+            <Button
+              variant='text'
+              endIcon={
+                <svg
+                  aria-hidden='true'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fillRule='evenodd'
+                    d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                    clipRule='evenodd'
+                  ></path>
+                </svg>
+              }
+            >
+              Button
+            </Button>
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='contained glow'>
+            <Button variant='contained' withGlow>
+              Button
+            </Button>
+          </Component>
+
+          <Component title='outlined glow'>
+            <Button variant='outline' withGlow>
+              Button
+            </Button>
+          </Component>
+
+          <Component title='text glow'>
+            <Button variant='text' withGlow>
+              Button
+            </Button>
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='disabled'>
+            <Button disabled>Button</Button>
+          </Component>
+
+          <Component title='loading'>
+            <Button loading>Button</Button>
+          </Component>
+        </Row>
+      </>
+
+      <Divider className='mb-10 mt-10' />
+
+      <Row>
+        <Component title='spinner'>
+          <Spinner />
+        </Component>
+
+        <Component title='spinner with size'>
+          <Spinner className='w-10 h-10' />
+        </Component>
+
+        <Component title='spinner with size and width'>
+          <Spinner className='w-10 h-10 border-[5px]' />
+        </Component>
+      </Row>
+
+      <Divider className='mb-10 mt-10' />
+
+      <Row>
+        <Component title='Сard'>
+          <Card className='w-[320px]'>
+            <div className='px-3 py-4'>
+              <h2 className='text-center text-lg mb-1'>Some header</h2>
+              <p className='text-justify'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                eligendi suscipit ipsum, nesciunt asperiores voluptates
+                aspernatur animi recusandae odio id...
+              </p>
+              <Button className='mt-3'>Read more</Button>
+            </div>
+          </Card>
+        </Component>
+
+        <Component title='Сard with image'>
+          <Card className='w-[350px]'>
+            <div className='h-[330px] overflow-hidden'>
+              <Image placeholder='blur' alt='test' src={image}></Image>
+            </div>
+
+            <div className='px-2 py-3 mb-1'>
+              <h2 className='text-center text-lg'>Andromeda</h2>
+              <h3 className='text-center text-md'>
+                Brilliant front-end developer from Siberia ❄️
+              </h3>
+              <p className='text-sm'>Very funny and very lovely</p>
+
+              <div className='flex '>
+                <Button
+                  type='icon'
+                  variant='text'
+                  rounded='rounded-full'
+                  className='rounded-full'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    strokeWidth={1.5}
+                    stroke='currentColor'
+                    className='w-6 h-6'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z'
+                    />
+                  </svg>
+                </Button>
+
+                <Button type='icon' variant='text' rounded='rounded-full'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    strokeWidth={1.5}
+                    stroke='currentColor'
+                    className='w-6 h-6'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z'
+                    />
+                  </svg>
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </Component>
+      </Row>
+
+      <Divider className='mb-10 mt-10' />
+
+      <Row>
+        <Component title='switch'>
+          <Switch />
+        </Component>
+
+        <Component title='switch checked'>
+          <Switch checked />
+        </Component>
+
+        <Component title='switch disabled'>
+          <Switch disabled />
+        </Component>
+
+        <Component title='switch disabled checked'>
+          <Switch checked disabled />
+        </Component>
+
+        <Component title='switch with label'>
+          <Switch name='test' label='Lorem, ipsum dolor.' />
+        </Component>
+      </Row>
+
+      <Divider className='mb-10 mt-10' />
+    </>
+  )
+}
