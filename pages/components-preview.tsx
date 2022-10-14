@@ -6,7 +6,7 @@ const ComponentsPreviewPage: NextPage = () => {
   return (
     <>
       <div className='w-10/12 p-8 mx-auto relative'>
-        <ThemeSwitcher className='absolute top-2 right-0' />
+        <ThemeSwitcher className='fixed top-3 right-20' />
         <ComponentsPreview />
       </div>
     </>

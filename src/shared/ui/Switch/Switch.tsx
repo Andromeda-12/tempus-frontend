@@ -11,11 +11,13 @@ interface LabelProps {
   htmlFor?: string
 }
 
-const Label = ({ children, className, htmlFor }: LabelProps) => (
-  <label htmlFor={htmlFor} className={clsx('', className)}>
-    {children}
-  </label>
-)
+import { Label } from '@radix-ui/react-label'
+
+// const Label = ({ children, className, htmlFor }: LabelProps) => (
+//   <label htmlFor={htmlFor} className={clsx('', className)}>
+//     {children}
+//   </label>
+// )
 
 interface SwitchProps {
   name?: string
@@ -52,17 +54,13 @@ export const Switch = ({
           className={clsx(
             'group-radix-state-checked:translate-x-5',
             'group-radix-state-unchecked:translate-x-0',
-            'pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out',
+            'pointer-events-none inline-block h-[19px] w-[20px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out',
             'radix-disabled:bg-white/60'
           )}
         />
       </SwitchRoot>
 
-      {label && (
-        <Label htmlFor={name} className='ml-3'>
-          {label}
-        </Label>
-      )}
+      {label && <Label htmlFor={name} className='ml-3'>{label}</Label>}
     </div>
   )
 }

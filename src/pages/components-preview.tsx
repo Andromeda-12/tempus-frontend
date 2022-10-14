@@ -1,18 +1,32 @@
 import React, { ReactNode } from 'react'
-import { Button, Card, Divider, Spinner, Switch } from '@/shared/ui'
+import {
+  Button,
+  Card,
+  Checkbox,
+  Divider,
+  Progress,
+  Spinner,
+  Switch,
+  Tooltip
+} from '@/shared/ui'
 import Image from 'next/image'
 import image from '../../public/photo.jpg'
+import clsx from 'clsx'
 
 interface ComponentsPreview {}
 
 const Component = ({
   children,
+  className,
   title
 }: {
   children: ReactNode
   title: string
+  className?: string
 }) => (
-  <div className='flex flex-col items-center gap-2 text-center'>
+  <div
+    className={clsx('flex flex-col items-center gap-2 text-center', className)}
+  >
     <p className='text-primary-hover bg-primary/5'>{title}</p>
     {children}
   </div>
@@ -304,7 +318,64 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
         </Component>
 
         <Component title='switch with label'>
-          <Switch name='test' label='Lorem, ipsum dolor.' />
+          <Switch name='switch' label='Lorem, ipsum dolor.' />
+        </Component>
+      </Row>
+
+      <Divider className='mb-10 mt-10' />
+
+      <Row>
+        <Component title='checkbox'>
+          <Checkbox />
+        </Component>
+
+        <Component title='checkbox disabled'>
+          <Checkbox disabled />
+        </Component>
+
+        <Component title='checkbox checked disabled'>
+          <Checkbox checked disabled />
+        </Component>
+
+        <Component title='checkbox'>
+          <Checkbox name='checkbox' label='Accept terms and conditions' />
+        </Component>
+      </Row>
+
+      <Divider className='mb-10 mt-10' />
+
+      <Row>
+        <Component title='progress' className='w-[200px]'>
+          <Progress value={40} />
+        </Component>
+
+        <Component title='progress not rounded' className='w-[200px]'>
+          <Progress value={40} rounded={false} />
+        </Component>
+
+        <Component title='progress with custom color' className='w-[200px]'>
+          <Progress
+            value={40}
+            rounded={false}
+            color='bg-slate-700'
+            indicatorColor='bg-purple-700'
+          />
+        </Component>
+      </Row>
+
+      <Divider className='mb-10 mt-10' />
+
+      <Row>
+        <Component title='tooltip'>
+          <Tooltip text='OMG THIS IS SO COOL TOOLTIP'>
+            <Button>Button with tooltip</Button>
+          </Tooltip>
+        </Component>
+
+        <Component title='tooltip right side'>
+          <Tooltip text='OMG THIS IS SO COOL TOOLTIP' side='right'>
+            <Button>Button with right tooltip</Button>
+          </Tooltip>
         </Component>
       </Row>
 
