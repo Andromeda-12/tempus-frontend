@@ -27,7 +27,9 @@ export const Tooltip = ({
   return (
     <TooltipProvider delayDuration={100} skipDelayDuration={1000}>
       <TooltipRoot>
-        <TooltipTrigger>{children}</TooltipTrigger>
+        <TooltipTrigger asChild className='outline-none'>
+          <div>{children}</div>
+        </TooltipTrigger>
 
         <TooltipContent
           side={side}
@@ -43,7 +45,7 @@ export const Tooltip = ({
         >
           <TooltipArrow className='fill-current -mt-[0.6px] text-primary dark:text-slate-800' />
 
-          <span className='block text-xs leading-none text-gray-700 dark:text-gray-100'>
+          <span className='block text-xs leading-none text-color-light dark:text-color-dark'>
             {text}
           </span>
         </TooltipContent>

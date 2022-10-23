@@ -4,6 +4,7 @@ import {
   Card,
   Checkbox,
   Divider,
+  Input,
   Progress,
   Spinner,
   Switch,
@@ -27,7 +28,7 @@ const Component = ({
   <div
     className={clsx('flex flex-col items-center gap-2 text-center', className)}
   >
-    <p className='text-primary-hover bg-primary/5'>{title}</p>
+    <p className='text-primary-hover bg-primary/5 mb-2'>{title}</p>
     {children}
   </div>
 )
@@ -36,10 +37,30 @@ const Row = ({ children }: { children: ReactNode }) => (
   <div className='mb-7 flex align-top justify-center gap-5 '>{children}</div>
 )
 
+const Section = ({
+  children,
+  title
+}: {
+  children: ReactNode
+  title: string
+}) => (
+  <div>
+    <div className='text-center'>
+      <h1 className='px-3 py-1 text-lg font-medium text-primary bg-primary/5'>
+        {title}
+      </h1>
+    </div>
+
+    <div className='py-14'>{children}</div>
+    {/* <Divider className='mb-10 mt-10' /> */}
+    {/* <div className='bg-primary/5 h-7'></div> */}
+  </div>
+)
+
 export const ComponentsPreview = (props: ComponentsPreview) => {
   return (
     <>
-      <>
+      <Section title='Button'>
         <Row>
           <Component title='contained'>
             <Button>Button</Button>
@@ -205,181 +226,371 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             <Button loading>Button</Button>
           </Component>
         </Row>
-      </>
+      </Section>
 
-      <Divider className='mb-10 mt-10' />
+      <Section title='Spinner'>
+        <Row>
+          <Component title='spinner'>
+            <Spinner />
+          </Component>
 
-      <Row>
-        <Component title='spinner'>
-          <Spinner />
-        </Component>
+          <Component title='spinner with size'>
+            <Spinner className='w-10 h-10' />
+          </Component>
 
-        <Component title='spinner with size'>
-          <Spinner className='w-10 h-10' />
-        </Component>
+          <Component title='spinner with size and width'>
+            <Spinner className='w-10 h-10 border-[5px]' />
+          </Component>
+        </Row>
 
-        <Component title='spinner with size and width'>
-          <Spinner className='w-10 h-10 border-[5px]' />
-        </Component>
-      </Row>
+        <Row>
+          <Component title='spinner'>
+            <Spinner />
+          </Component>
 
-      <Divider className='mb-10 mt-10' />
+          <Component title='spinner with size'>
+            <Spinner className='w-10 h-10' />
+          </Component>
 
-      <Row>
-        <Component title='Сard'>
-          <Card className='w-[320px]'>
-            <div className='px-3 py-4'>
-              <h2 className='text-center text-lg mb-1'>Some header</h2>
-              <p className='text-justify'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-                eligendi suscipit ipsum, nesciunt asperiores voluptates
-                aspernatur animi recusandae odio id...
-              </p>
-              <Button className='mt-3'>Read more</Button>
-            </div>
-          </Card>
-        </Component>
+          <Component title='spinner with size and width'>
+            <Spinner className='w-10 h-10 border-[5px]' />
+          </Component>
+        </Row>
+      </Section>
 
-        <Component title='Сard with image'>
-          <Card className='w-[350px]'>
-            <div className='h-[330px] overflow-hidden'>
-              <Image placeholder='blur' alt='test' src={image}></Image>
-            </div>
-
-            <div className='px-2 py-3 mb-1'>
-              <h2 className='text-center text-lg'>Andromeda</h2>
-              <h3 className='text-center text-md'>
-                Brilliant front-end developer from Siberia ❄️
-              </h3>
-              <p className='text-sm'>Very funny and very lovely</p>
-
-              <div className='flex '>
-                <Button
-                  type='icon'
-                  variant='text'
-                  rounded='rounded-full'
-                  className='rounded-full'
-                >
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={1.5}
-                    stroke='currentColor'
-                    className='w-6 h-6'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z'
-                    />
-                  </svg>
-                </Button>
-
-                <Button type='icon' variant='text' rounded='rounded-full'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={1.5}
-                    stroke='currentColor'
-                    className='w-6 h-6'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z'
-                    />
-                  </svg>
-                </Button>
+      <Section title='Card'>
+        <Row>
+          <Component title='Сard'>
+            <Card className='w-[320px]'>
+              <div className='px-3 py-4'>
+                <h2 className='text-center text-lg mb-1'>Some header</h2>
+                <p className='text-justify'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magnam eligendi suscipit ipsum, nesciunt asperiores voluptates
+                  aspernatur animi recusandae odio id...
+                </p>
+                <Button className='mt-3'>Read more</Button>
               </div>
-            </div>
-          </Card>
-        </Component>
-      </Row>
+            </Card>
+          </Component>
 
-      <Divider className='mb-10 mt-10' />
+          <Component title='Сard with image'>
+            <Card className='w-[350px]'>
+              <div className='h-[330px] overflow-hidden'>
+                <Image placeholder='blur' alt='test' src={image}></Image>
+              </div>
 
-      <Row>
-        <Component title='switch'>
-          <Switch />
-        </Component>
+              <div className='px-2 py-3 mb-1'>
+                <h2 className='text-center text-lg'>Andromeda</h2>
+                <h3 className='text-center text-md'>
+                  Brilliant front-end developer from Siberia ❄️
+                </h3>
+                <p className='text-sm'>Very funny and very lovely</p>
 
-        <Component title='switch checked'>
-          <Switch checked />
-        </Component>
+                <div className='flex '>
+                  <Button
+                    type='icon'
+                    variant='text'
+                    rounded='rounded-full'
+                    className='rounded-full'
+                  >
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      strokeWidth={1.5}
+                      stroke='currentColor'
+                      className='w-6 h-6'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        d='M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z'
+                      />
+                    </svg>
+                  </Button>
 
-        <Component title='switch disabled'>
-          <Switch disabled />
-        </Component>
+                  <Button type='icon' variant='text' rounded='rounded-full'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      strokeWidth={1.5}
+                      stroke='currentColor'
+                      className='w-6 h-6'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        d='M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z'
+                      />
+                    </svg>
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </Component>
+        </Row>
+      </Section>
 
-        <Component title='switch disabled checked'>
-          <Switch checked disabled />
-        </Component>
+      <Section title='Switch'>
+        <Row>
+          <Component title='switch'>
+            <Switch />
+          </Component>
 
-        <Component title='switch with label'>
-          <Switch name='switch' label='Lorem, ipsum dolor.' />
-        </Component>
-      </Row>
+          <Component title='switch checked'>
+            <Switch checked />
+          </Component>
 
-      <Divider className='mb-10 mt-10' />
+          <Component title='switch disabled'>
+            <Switch disabled />
+          </Component>
 
-      <Row>
-        <Component title='checkbox'>
-          <Checkbox />
-        </Component>
+          <Component title='switch disabled checked'>
+            <Switch checked disabled />
+          </Component>
 
-        <Component title='checkbox disabled'>
-          <Checkbox disabled />
-        </Component>
+          <Component title='switch with label'>
+            <Switch name='switch' label='Lorem, ipsum dolor.' />
+          </Component>
+        </Row>
+      </Section>
 
-        <Component title='checkbox checked disabled'>
-          <Checkbox checked disabled />
-        </Component>
+      <Section title='Checkbox'>
+        <Row>
+          <Component title='checkbox'>
+            <Checkbox />
+          </Component>
 
-        <Component title='checkbox'>
-          <Checkbox name='checkbox' label='Accept terms and conditions' />
-        </Component>
-      </Row>
+          <Component title='checkbox disabled'>
+            <Checkbox disabled />
+          </Component>
 
-      <Divider className='mb-10 mt-10' />
+          <Component title='checkbox checked disabled'>
+            <Checkbox checked disabled />
+          </Component>
 
-      <Row>
-        <Component title='progress' className='w-[200px]'>
-          <Progress value={40} />
-        </Component>
+          <Component title='checkbox'>
+            <Checkbox name='checkbox' label='Accept terms and conditions' />
+          </Component>
+        </Row>
+      </Section>
 
-        <Component title='progress not rounded' className='w-[200px]'>
-          <Progress value={40} rounded={false} />
-        </Component>
+      <Section title='Progress bar'>
+        <Row>
+          <Component title='progress' className='w-[200px]'>
+            <Progress value={40} />
+          </Component>
 
-        <Component title='progress with custom color' className='w-[200px]'>
-          <Progress
-            value={40}
-            rounded={false}
-            color='bg-slate-700'
-            indicatorColor='bg-purple-700'
-          />
-        </Component>
-      </Row>
+          <Component title='progress not rounded' className='w-[200px]'>
+            <Progress value={40} rounded={false} />
+          </Component>
 
-      <Divider className='mb-10 mt-10' />
+          <Component title='progress with custom color' className='w-[200px]'>
+            <Progress
+              value={40}
+              rounded={false}
+              color='bg-slate-700'
+              indicatorColor='bg-purple-700'
+            />
+          </Component>
+        </Row>
+      </Section>
 
-      <Row>
-        <Component title='tooltip'>
-          <Tooltip text='OMG THIS IS SO COOL TOOLTIP'>
-            <Button>Button with tooltip</Button>
-          </Tooltip>
-        </Component>
+      <Section title='Tooltip'>
+        <Row>
+          <Component title='tooltip'>
+            <Tooltip text='OMG THIS IS SO COOL TOOLTIP'>
+              <Button>Button with tooltip</Button>
+            </Tooltip>
+          </Component>
 
-        <Component title='tooltip right side'>
-          <Tooltip text='OMG THIS IS SO COOL TOOLTIP' side='right'>
-            <Button>Button with right tooltip</Button>
-          </Tooltip>
-        </Component>
-      </Row>
+          <Component title='tooltip right side'>
+            <Tooltip text='OMG THIS IS SO COOL TOOLTIP' side='right'>
+              <Button>Button with right tooltip</Button>
+            </Tooltip>
+          </Component>
+        </Row>
+      </Section>
 
-      <Divider className='mb-10 mt-10' />
+      <Section title='Input'>
+        <Row>
+          <Component title='standart'>
+            <Input />
+          </Component>
+
+          <Component title='outlined'>
+            <Input variant='outlined' />
+          </Component>
+
+          <Component title='standart disabled'>
+            <Input disabled />
+          </Component>
+
+          <Component title='outlined disabled'>
+            <Input variant='outlined' disabled />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart filled'>
+            <Input filled />
+          </Component>
+
+          <Component title='outlined filled'>
+            <Input variant='outlined' filled />
+          </Component>
+
+          <Component title='standart disabled filled'>
+            <Input disabled filled />
+          </Component>
+
+          <Component title='outlined disabled filled'>
+            <Input variant='outlined' disabled filled />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart label'>
+            <Input label='Standart' />
+          </Component>
+
+          <Component title='outlined label'>
+            <Input variant='outlined' label='Outlined' />
+          </Component>
+
+          <Component title='outlined label disabled'>
+            <Input label='disabled' disabled />
+          </Component>
+
+          <Component title='input outlined disabled'>
+            <Input variant='outlined' label='disabled' disabled />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart with placeholder'>
+            <Input placeholder='test' />
+          </Component>
+
+          <Component title='outlined with placeholder'>
+            <Input variant='outlined' placeholder='test' />
+          </Component>
+
+          <Component title='standart placeholder disabled'>
+            <Input disabled placeholder='test' />
+          </Component>
+
+          <Component title='outlined placeholder disabled'>
+            <Input variant='outlined' disabled placeholder='test' />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart label with placeholder'>
+            <Input label='Standart' placeholder='test' />
+          </Component>
+
+          <Component title='outlined label with placeholder'>
+            <Input variant='outlined' label='Outlined' placeholder='test' />
+          </Component>
+
+          <Component title='outlined label placeholder disabled'>
+            <Input label='disabled' disabled placeholder='test' />
+          </Component>
+
+          <Component title='input outlined placeholder disabled'>
+            <Input
+              variant='outlined'
+              label='disabled'
+              disabled
+              placeholder='test'
+            />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart'>
+            <Input label='Standart' helperText='some text' />
+          </Component>
+
+          <Component title='outlined'>
+            <Input variant='outlined' label='Outlined' helperText='some text' />
+          </Component>
+
+          <Component title='outlined'>
+            <Input label='disabled' disabled helperText='some text' />
+          </Component>
+
+          <Component title='input outlined'>
+            <Input
+              variant='outlined'
+              label='disabled'
+              disabled
+              helperText='some text'
+            />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart with helper text'>
+            <Input label='Standart' error helperText='some text' />
+          </Component>
+
+          <Component title='outlined with helper text'>
+            <Input
+              variant='outlined'
+              label='Outlined'
+              error
+              helperText='some text'
+            />
+          </Component>
+
+          <Component title='standart disabled with helper text'>
+            <Input label='disabled' disabled error helperText='some text' />
+          </Component>
+
+          <Component title='outlined disabled with helper text'>
+            <Input
+              variant='outlined'
+              label='disabled'
+              disabled
+              error
+              helperText='some text'
+            />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart filled with helper text'>
+            <Input label='Standart' filled error helperText='some text' />
+          </Component>
+
+          <Component title='outlined with helper text'>
+            <Input
+              variant='outlined'
+              label='Outlined'
+              error
+              helperText='some text'
+            />
+          </Component>
+
+          <Component title='standart disabled with helper text'>
+            <Input label='disabled' disabled error helperText='some text' />
+          </Component>
+
+          <Component title='outlined disabled with helper text'>
+            <Input
+              variant='outlined'
+              label='disabled'
+              disabled
+              error
+              helperText='some text'
+            />
+          </Component>
+        </Row>
+      </Section>
     </>
   )
 }

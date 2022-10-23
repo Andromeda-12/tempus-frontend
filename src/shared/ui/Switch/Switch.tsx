@@ -60,7 +60,7 @@ export const Switch = ({
         />
       </SwitchRoot>
 
-      {label && <Label htmlFor={name} className='ml-3'>{label}</Label>}
+      {label && <Label htmlFor={name} className='ml-3 cursor-pointer'>{label}</Label>}
     </div>
   )
 }

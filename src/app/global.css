@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-slate-900/80;
+    @apply bg-background-light dark:bg-background-dark;
   }
 }
 
