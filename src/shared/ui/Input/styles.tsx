@@ -63,9 +63,10 @@ export const variantMap = {
         icon: 'w-6 h-6'
       }
     },
+    // !border-error dark:!border-error border-red-500 placeholder-shown:!border-t-error placeholder-shown:border-red-500
     error: {
       input:
-        '!border-error dark:!border-error',
+        '!border-error',
       label:
         '!text-error peer-focus:text-error peer-placeholder-shown:text-error before:border-error peer-focus:before:border-error after:border-error peer-focus:after:!border-error'
     }

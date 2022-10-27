@@ -38,8 +38,7 @@ export const OldInput = ({
           'w-full bg-transparent focus:outline-none peer transition-colors duration-150',
           variant === 'outlined' &&
             'px-3 py-3 border focus:shadow-input-shadow rounded-md',
-          variant === 'standard' &&
-            'pb-1 pt-3 border-b-2 -z-1',
+          variant === 'standard' && 'pb-1 pt-3 border-b-2 -z-1',
           disabled &&
             'text-gray-700 bg-gray-100 dark:bg-primary-disable/10 border-dotted cursor-not-allowed',
           label && 'placeholder:opacity-0 focus:placeholder:opacity-100',
@@ -49,7 +48,9 @@ export const OldInput = ({
           error && variant === 'outlined'
             ? 'border-error dark:border-error focus:dark:border-error focus:shadow-error'
             : 'dark:border-primary/50 focus:shadow-primary',
-          error && variant === 'standard' ? 'border-error dark:border-error' : 'border-slate-500 dark:border-primary/50 focus:dark:border-primary',
+          error && variant === 'standard'
+            ? 'border-error dark:border-error'
+            : 'border-slate-500 dark:border-primary/50 focus:dark:border-primary',
           className
         )}
       />
@@ -60,9 +61,10 @@ export const OldInput = ({
           className={clsx(
             'absolute duration-150 transform -translate-y-6 scale-85',
             'peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85',
-            variant === 'standard' &&
-              '-z-2 peer-focus:-translate-y-6',
-            variant === 'standard' && filled ? 'top-5 left-2 peer-focus:left-2 origin-[0]' : 'top-3 left-0 peer-focus:left-0 origin-[0]',
+            variant === 'standard' && '-z-2 peer-focus:-translate-y-6',
+            variant === 'standard' && filled
+              ? 'top-5 left-2 peer-focus:left-2 origin-[0]'
+              : 'top-3 left-0 peer-focus:left-0 origin-[0]',
             variant === 'outlined' &&
               'px-1 top-3 left-2 peer-focus:left-2 peer-focus:-translate-y-6',
             labelBackground

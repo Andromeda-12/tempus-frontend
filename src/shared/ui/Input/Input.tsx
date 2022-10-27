@@ -65,12 +65,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       base.input,
       //   inputVariant.input,
       variant === 'outlined' && label
-        ? 'border placeholder-shown:!border-t-primary/50 !border-t-transparent focus:!border-t-transparent'
+        ? 'border !border-t-transparent focus:!border-t-transparent dark:focus:!border-t-transparent'
         : inputVariant.input,
       inputSize.input,
       icon && inputVariant.inputWithIcon,
       error && inputError,
-      error && variant === 'outlined' && label && 'border-t-0',
+      // error && variant === 'outlined' && label ? 'placeholder-shown:!border-t-error' :
+      // error && variant==='outlined'  && 'placeholder-shown:!border-t-primary/50',
+      variant === 'outlined' && label && !error
+        ? 'dark:placeholder-shown:!border-t-primary/50 placeholder-shown:!border-t-black'
+        : variant === 'outlined' &&
+            label &&
+            error &&
+            'placeholder-shown:!border-t-error',
       className
     )
 
@@ -92,7 +99,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className={inputClasses}
           placeholder={placeholder || ' '}
         />
-        
+        {label && <label className={labelClasses}>{label}</label>}
       </div>
     )
   }
