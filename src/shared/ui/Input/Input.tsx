@@ -8,6 +8,7 @@ interface InputProps extends Omit<React.ComponentProps<'input'>, 'size'> {
   label?: string
   placeholder?: string
   error?: boolean
+  helperText?: string
   icon?: ReactNode
   labelClassName?: string
   containerClassName?: string
@@ -22,6 +23,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       label,
       placeholder,
       error,
+      helperText,
       icon,
       labelClassName,
       containerClassName,
@@ -73,7 +75,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       // error && variant === 'outlined' && label ? 'placeholder-shown:!border-t-error' :
       // error && variant==='outlined'  && 'placeholder-shown:!border-t-primary/50',
       variant === 'outlined' && label && !error
-        ? 'dark:placeholder-shown:!border-t-primary/50 placeholder-shown:!border-t-black'
+        ? 'dark:placeholder-shown:!border-t-primary/50 placeholder-shown:!border-t-slate-500'
         : variant === 'outlined' &&
             label &&
             error &&
@@ -91,16 +93,24 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const iconClasses = clsx(base.icon, inputVariant.icon, inputSize.icon)
 
+    const helperTextClasses = clsx(
+      'text-sm text-slate-600 dark:text-slate-300 self-start text-justify',
+      variant === 'outlined' && 'ml-3 mr-3'
+    )
+
     return (
-      <div ref={ref} className={containerClasses}>
-        {icon && <div className={iconClasses}>{icon}</div>}
-        <input
-          {...rest}
-          className={inputClasses}
-          placeholder={placeholder || ' '}
-        />
-        {label && <label className={labelClasses}>{label}</label>}
-      </div>
+      <>
+        <div ref={ref} className={containerClasses}>
+          {icon && <div className={iconClasses}>{icon}</div>}
+          <input
+            {...rest}
+            className={inputClasses}
+            placeholder={placeholder || ' '}
+          />
+          {label && <label className={labelClasses}>{label}</label>}
+        </div>
+        {helperText && <div className={helperTextClasses}>{helperText}</div>}
+      </>
     )
   }
 )

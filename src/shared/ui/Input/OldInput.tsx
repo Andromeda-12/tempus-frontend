@@ -59,7 +59,7 @@ export const OldInput = ({
         <label
           htmlFor={id}
           className={clsx(
-            'absolute duration-150 transform -translate-y-6 scale-85',
+            'absolute  duration-150 transform -translate-y-6 scale-85',
             'peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85',
             variant === 'standard' && '-z-2 peer-focus:-translate-y-6',
             variant === 'standard' && filled

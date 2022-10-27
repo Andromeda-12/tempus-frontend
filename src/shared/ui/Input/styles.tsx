@@ -48,7 +48,7 @@ export const variantMap = {
     inputWithIcon: '!pr-9',
     icon: 'top-2/4 right-3 -translate-y-2/4',
     label:
-      '-top-2.5 w-full text-gray-400 text-sm peer-focus:text-sm peer-placeholder-shown:text-base peer-focus:text-primary before:content[" "] before:block before:box-border before:w-2.5 before:h-[8px] before:mt-[10px] before:mr-1 peer-focus:before:border-primary peer-focus:after:border-primary peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t before:border-l before:transition-all peer-disabled:before:border-primary-disabled after:content[" "] after:block after:flex-grow after:box-border after:w-2.5 after:h-[8px] after:mt-[10px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t before:border-primary-disabled after:border-primary-disabled after:border-r after:transition-all ',
+      '-top-2.5 w-full text-gray-400 text-sm peer-focus:text-sm peer-placeholder-shown:text-base peer-focus:text-primary before:content[" "] before:block before:box-border before:w-2.5 before:h-[8px] before:mt-[10px] before:mr-1 peer-focus:before:border-primary peer-focus:after:border-primary peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t before:border-l before:transition-all dark:peer-disabled:before:border-primary-disabled peer-disabled:before:border-slate-500 after:content[" "] after:block after:flex-grow after:box-border after:w-2.5 after:h-[8px] after:mt-[10px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t before:border-slate-500 dark:before:border-primary-disabled dark:after:border-primary-disabled after:border-slate-500 after:border-r after:transition-all ',
     sizes: {
       md: {
         container: '',
@@ -68,7 +68,7 @@ export const variantMap = {
       input:
         '!border-error',
       label:
-        '!text-error peer-focus:text-error peer-placeholder-shown:text-error before:border-error peer-focus:before:border-error after:border-error peer-focus:after:!border-error'
+        '!text-error peer-focus:text-error peer-placeholder-shown:text-error before:!border-error after:!border-error dark:before:border-error dark:after:border-error peer-focus:before:border-error after:border-error peer-focus:after:!border-error'
     }
   },
   filled: {

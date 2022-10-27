@@ -602,6 +602,10 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
           <Component title='outlined'>
             <Input variant='outlined' />
           </Component>
+
+          <Component title='filled'>
+            <Input variant='filled' />
+          </Component>
         </Row>
 
         <Row>
@@ -613,7 +617,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             <Input label='Standard' />
           </Component>
 
-          <Component title='standard label placeholder'>
+          <Component title='label placeholder'>
             <Input label='Label' placeholder='placeholder' />
           </Component>
 
@@ -626,6 +630,10 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
           </Component>
 
           <Component title='standard error'>
+            <Input error />
+          </Component>
+
+          <Component title='standard error label'>
             <Input label='Label' error />
           </Component>
         </Row>
@@ -643,7 +651,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             <Input variant='outlined' label='Label' placeholder='placeholder' />
           </Component>
 
-          <Component title='outlined label disabled'>
+          <Component title='outlined disabled'>
             <Input variant='outlined' label='Label' disabled />
           </Component>
 
@@ -657,6 +665,58 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
 
           <Component title='outlined error label'>
             <Input variant='outlined' label='Label' error />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='filled'>
+            <Input variant='filled' />
+          </Component>
+
+          <Component title='filled label'>
+            <Input variant='filled' label='Label' />
+          </Component>
+
+          <Component title='label placeholder'>
+            <Input variant='filled' label='Label' placeholder='placeholder' />
+          </Component>
+
+          <Component title='filled label disabled'>
+            <Input variant='filled' label='Label' disabled />
+          </Component>
+
+          <Component title='disabled with value'>
+            <Input variant='filled' label='Label' value='test' disabled />
+          </Component>
+
+          <Component title='filled error'>
+            <Input variant='filled' error />
+          </Component>
+
+          <Component title='filled error label'>
+            <Input variant='filled' label='Label' error />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart with helper text'>
+            <Input label='With helper text' helperText='some text helps you' />
+          </Component>
+
+          <Component title='outlined with helper text'>
+            <Input
+              variant='outlined'
+              label='With helper text'
+              helperText='some text helps you'
+            />
+          </Component>
+
+          <Component title='filled with helper text'>
+            <Input
+              variant='filled'
+              label='With helper text'
+              helperText='some text helps you'
+            />
           </Component>
         </Row>
       </Section>
