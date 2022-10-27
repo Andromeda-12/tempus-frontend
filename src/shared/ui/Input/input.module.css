@@ -1,0 +1,29 @@
+.input-container {
+  @apply relative w-full;
+}
+
+.input-container--md {
+  @apply text-sm pt-4 pb-1.5 h-11 peer-placeholder-shown:leading-[4.25];
+}
+.input-container--md-icon {
+  @apply w-5 h-5;
+}
+
+.input-container--lg {
+  @apply h-12 text-sm px-px pt-5 pb-2 peer-placeholder-shown:leading-[4.875];
+}
+.input-container--lg-icon {
+  @apply w-6 h-6;
+}
+
+.input-standard {
+  @apply border-b placeholder-shown:border-blue-gray-200;
+}
+
+.input-standard--with-icon {
+  @apply !pr-7 top-2/4 right-0 -translate-y-1/4;
+}
+
+.error {
+  @apply border-red-500 placeholder-shown:border-red-500 focus:border-red-500 text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500" after:border-red-500 peer-focus:after:border-red-500;
+}

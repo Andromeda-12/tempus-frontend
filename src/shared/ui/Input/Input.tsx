@@ -1,99 +1,101 @@
+import React, { ReactNode } from 'react'
 import clsx from 'clsx'
-import { useId } from 'react'
+import { base, variantMap } from './styles'
 
-interface InputProps {
-  className?: string
-  placeholder?: string
-  variant?: 'outlined' | 'standard' | 'filled'
-  filled?: boolean
+interface InputProps extends Omit<React.ComponentProps<'input'>, 'size'> {
+  variant?: 'standard' | 'outlined' | 'filled'
+  size?: 'md' | 'lg'
   label?: string
-  labelBackground?: string
-  disabled?: boolean
-  type?: 'password' | 'email' | 'number'
-  helperText?: string
+  placeholder?: string
   error?: boolean
+  icon?: ReactNode
+  labelClassName?: string
+  containerClassName?: string
+  className?: string
 }
 
-export const Input = ({
-  className,
-  placeholder,
-  variant = 'standard',
-  filled,
-  label,
-  labelBackground,
-  disabled,
-  helperText,
-  error
-}: InputProps) => {
-  const id = useId()
-  // bg-clip-padding
-  return (
-    <div className='relative z-0 w-full'>
-      <input
-        id={id}
-        type='text'
-        placeholder={placeholder || ' '}
-        disabled={disabled}
-        className={clsx(
-          'w-full bg-transparent focus:outline-none peer transition-colors duration-150',
-          variant === 'outlined' &&
-            'px-3 py-3 border focus:shadow-input-shadow rounded-md',
-          variant === 'standard' &&
-            'pb-1 pt-3 border-b-2 -z-1',
-          disabled &&
-            'text-gray-700 bg-gray-100 dark:bg-primary-disable/10 border-dotted cursor-not-allowed',
-          label && 'placeholder:opacity-0 focus:placeholder:opacity-100',
-          filled && 'bg-gray-100 dark:bg-primary/7',
-          filled && variant === 'standard' && 'px-2 pt-5 rounded-t-md',
-          error ? 'focus:border-error' : 'focus:border-primary',
-          error && variant === 'outlined'
-            ? 'border-error dark:border-error focus:dark:border-error focus:shadow-error'
-            : 'dark:border-primary/50 focus:shadow-primary',
-          error && variant === 'standard' ? 'border-error dark:border-error' : 'border-slate-500 dark:border-primary/50 focus:dark:border-primary',
-          className
-        )}
-      />
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  (
+    {
+      variant = 'standard',
+      size = 'md',
+      label,
+      placeholder,
+      error,
+      icon,
+      labelClassName,
+      containerClassName,
+      className,
+      ...rest
+    },
+    ref
+  ) => {
+    //   const sizeMap = {
+    //     'sm' : '',
+    //     'md' : 'h-11 text-sm pt-4 pb-1.5 peer-placeholder-shown:leading-[4.25]',
+    //     'lg' : 'h-12 text-sm px-px pt-5 pb-2 peer-placeholder-shown:leading-[4.875]'
+    //   }
 
-      {label && (
-        <label
-          htmlFor={id}
-          className={clsx(
-            'absolute duration-150 transform -translate-y-6 scale-85',
-            'peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85',
-            variant === 'standard' &&
-              '-z-2 peer-focus:-translate-y-6',
-            variant === 'standard' && filled ? 'top-5 left-2 peer-focus:left-2 origin-[0]' : 'top-3 left-0 peer-focus:left-0 origin-[0]',
-            variant === 'outlined' &&
-              'px-1 top-3 left-2 peer-focus:left-2 peer-focus:-translate-y-6',
-            labelBackground
-              ? labelBackground
-              : filled || disabled
-              ? ''
-              : 'bg-background-light dark:bg-background-dark',
-            error
-              ? 'text-error peer-focus:text-error'
-              : 'text-gray-400 peer-focus:text-primary'
-          )}
-        >
-          {label}
-        </label>
-      )}
+    //   const variantMap = {
+    //     'standard': 'border-b placeholder-shown:border-blue-gray-200 ',
+    //     'outlined': '',
+    //     'filled': '',
+    //   }
 
-      <div
-        className={clsx(
-          'text-sm text-start mt-1',
-          error ? 'text-error' : 'text-color-light/60 dark:text-color-dark/60'
-        )}
-      >
-        {helperText}
+    //   const withIconMap = {
+    //     'standard:': '!pr-7'
+    //   }
+
+    //   const iconVariantMap = {
+    //     'standard': 'top-2/4 right-0 -translate-y-1/4',
+    //   }
+
+    const inputVariant = variantMap[variant]
+    const inputSize = inputVariant.sizes[size]
+    const inputError = inputVariant.error.input
+    const labelError = inputVariant.error.label
+
+    const containerClasses = clsx(
+      base.container,
+      inputSize.container,
+      containerClassName
+    )
+
+    const inputClasses = clsx(
+      base.input,
+      //   inputVariant.input,
+      variant === 'outlined' && label
+        ? 'border placeholder-shown:!border-t-primary/50 !border-t-transparent focus:!border-t-transparent'
+        : inputVariant.input,
+      inputSize.input,
+      icon && inputVariant.inputWithIcon,
+      error && inputError,
+      error && variant === 'outlined' && label && 'border-t-0',
+      className
+    )
+
+    const labelClasses = clsx(
+      base.label,
+      inputVariant.label,
+      inputSize.label,
+      error && labelError,
+      labelClassName
+    )
+
+    const iconClasses = clsx(base.icon, inputVariant.icon, inputSize.icon)
+
+    return (
+      <div ref={ref} className={containerClasses}>
+        {icon && <div className={iconClasses}>{icon}</div>}
+        <input
+          {...rest}
+          className={inputClasses}
+          placeholder={placeholder || ' '}
+        />
+        
       </div>
-    </div>
-  )
-}
-// transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-// !pr-9'
-// icon: {
-//   top: "top-2/4",
-//   right: "right-3",
-//   transform: "-translate-y-2/4",
-// },
+    )
+  }
+)
+
+Input.displayName = 'Input'

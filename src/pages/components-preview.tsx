@@ -5,6 +5,7 @@ import {
   Checkbox,
   Divider,
   Input,
+  OldInput,
   Progress,
   Spinner,
   Switch,
@@ -414,7 +415,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
         </Row>
       </Section>
 
-      <Section title='Input'>
+      {/* <Section title='Input'>
         <Row>
           <Component title='standart'>
             <Input />
@@ -588,6 +589,74 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
               error
               helperText='some text'
             />
+          </Component>
+        </Row>
+      </Section> */}
+
+      <Section title='Input'>
+        <Row>
+          <Component title='standard'>
+            <Input />
+          </Component>
+
+          <Component title='outlined'>
+            <Input variant='outlined' />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standard'>
+            <Input />
+          </Component>
+
+          <Component title='standard label'>
+            <Input label='Standard' />
+          </Component>
+
+          <Component title='standard label placeholder'>
+            <Input label='Label' placeholder='placeholder' />
+          </Component>
+
+          <Component title='standard disabled'>
+            <Input label='Label' disabled />
+          </Component>
+
+          <Component title='disabled with value'>
+            <Input label='Label' value='test' disabled />
+          </Component>
+
+          <Component title='standard error'>
+            <Input label='Label' error />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='outlined'>
+            <Input variant='outlined' />
+          </Component>
+
+          <Component title='outlined label'>
+            <Input variant='outlined' label='Label' />
+          </Component>
+
+          <Component title='label placeholder'>
+            <Input variant='outlined' label='Label' placeholder='placeholder' />
+          </Component>
+
+          <Component title='outlined label disabled'>
+            <Input variant='outlined' label='Label' disabled />
+          </Component>
+
+          <Component title='disabled with value'>
+            <Input variant='outlined' label='Label' value='test' disabled />
+          </Component>
+
+          <Component title='outlined error'>
+            <Input variant='outlined' error />
+          </Component>
+
+          <Component title='outlined error label'>
+            <Input variant='outlined' label='Label' error />
           </Component>
         </Row>
       </Section>

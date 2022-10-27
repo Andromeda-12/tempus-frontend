@@ -16,7 +16,7 @@ module.exports = {
         primary: '#01e3ff',
         'primary-hover': '#01e3e0',
         'primary-active': '#01e3e0',
-        'primary-disable': '#15889f',
+        'primary-disabled': '#0b7f97',
         'color-light': '#000000',
         'color-dark': '#ffffff',
         error: 'rgb(220 38 38)'
