@@ -11,7 +11,7 @@ export const base = {
   label: clsx(
     'flex w-ful h-full absolute left-0 transition-all select-none pointer-events-none leading-tight peer-focus:leading-tight'
   ),
-  icon: clsx('grid place-items-center absolute text-blue-gray-500')
+  icon: clsx('grid place-items-center absolute select-none text-blue-gray-500')
 }
 
 export const variantMap = {
@@ -39,7 +39,7 @@ export const variantMap = {
       input:
         '!border-error dark:border-error placeholder-shown:border-error focus:border-error',
       label:
-        'text-red-500 peer-focus:text-red-500 peer-placeholder-shown:text-red-500 after:border-red-500 peer-focus:after:border-red-500'
+        '!text-error peer-focus:text-error peer-placeholder-shown:text-error after:border-error peer-focus:after:border-error'
     }
   },
   // focus:shadow-input-shadow focus:shadow-primary
@@ -53,7 +53,7 @@ export const variantMap = {
       md: {
         container: '',
         input: 'px-3 py-3 rounded-md',
-        label: 'peer-placeholder-shown:leading-[3.75]',
+        label: 'peer-placeholder-shown:leading-[4.2]',
         icon: 'w-5 h-5'
       },
       lg: {
@@ -65,8 +65,7 @@ export const variantMap = {
     },
     // !border-error dark:!border-error border-red-500 placeholder-shown:!border-t-error placeholder-shown:border-red-500
     error: {
-      input:
-        '!border-error',
+      input: '!border-error',
       label:
         '!text-error peer-focus:text-error peer-placeholder-shown:text-error before:!border-error after:!border-error dark:before:border-error dark:after:border-error peer-focus:before:border-error after:border-error peer-focus:after:!border-error'
     }
@@ -76,7 +75,7 @@ export const variantMap = {
     inputWithIcon: '!pr-7',
     icon: 'top-2/4 right-0 -translate-y-1/4',
     label:
-      '-top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] after:content[" "] after:block after:w-full after:absolute after:-bottom-1.5 left-0 after:border-b-2 after:scale-x-0 peer-focus:after:scale-x-100 after:transition-transform after:duration-300',
+      '-top-1.5 w-full after:border-primary peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] after:content[" "] after:block after:w-full after:absolute after:-bottom-1.5 left-0 after:border-b-2 after:scale-x-0 peer-focus:after:scale-x-100 after:transition-transform after:duration-300',
     sizes: {
       md: {
         container: 'h-11',

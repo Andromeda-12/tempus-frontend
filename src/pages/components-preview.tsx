@@ -718,6 +718,25 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
               helperText='some text helps you'
             />
           </Component>
+
+          <Component title='error helper text'>
+            <Input
+              variant='standard'
+              label='With helper text'
+              helperText='some text helps you'
+              error
+            />
+          </Component>
+        </Row>
+
+        <Row>
+          <Component title='standart with helper text'>
+            <Input label='With helper text' password />
+          </Component>
+
+          <Component title='standart with helper text'>
+            <Input variant='outlined' password label='With helper text' />
+          </Component>
         </Row>
       </Section>
     </>
