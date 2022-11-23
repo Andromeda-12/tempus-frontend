@@ -245,6 +245,14 @@
     "@radix-ui/react-use-size" "1.0.0"
     "@radix-ui/rect" "1.0.0"
 
+"@radix-ui/react-portal@^1.0.1":
+  "integrity" "sha512-NY2vUWI5WENgAT1nfC6JS7RU5xRYBfjZVLq0HmgEN1Ezy3rk/UruMV4+Rd0F40PEaFC5SrLS1ixYvcYIQrb4Ig=="
+  "resolved" "https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-primitive" "1.0.1"
+
 "@radix-ui/react-portal@1.0.0":
   "integrity" "sha512-a8qyFO/Xb99d8wQdu4o7qnigNjTPG123uADNecz0eX4usnQEj7o+cG4ZX4zkqq98NYekT7UoEQIjxBNWIFuqTA=="
   "resolved" "https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.0.0.tgz"
@@ -270,6 +278,14 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "1.0.0"
 
+"@radix-ui/react-primitive@1.0.1":
+  "integrity" "sha512-fHbmislWVkZaIdeF6GZxF0A/NH/3BjrGIYj+Ae6eTmTCr7EB0RQAAVEiqsXK6p3/JcRqVSBQoceZroj30Jj3XA=="
+  "resolved" "https://registry.npmjs.org/@radix-ui/react-primitive/-/react-primitive-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-slot" "1.0.1"
+
 "@radix-ui/react-progress@^1.0.0":
   "integrity" "sha512-j+JHtTuDpIhF0eOolNug+8hpZqNXcXp2GhTtwz+lnFzhY2a8+LXRSU79iy0r0WUs7UqCXCEeIJIrhg7NS/vPGA=="
   "resolved" "https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.0.0.tgz"
@@ -283,6 +299,14 @@
   "integrity" "sha512-3mrKauI/tWXo1Ll+gN5dHcxDPdm/Df1ufcDLCecn+pnCIVcdWE7CujXo8QaXOWRJyZyQWWbpB8eFwHzWXlv5mQ=="
   "resolved" "https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.0.0.tgz"
   "version" "1.0.0"
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-compose-refs" "1.0.0"
+
+"@radix-ui/react-slot@1.0.1":
+  "integrity" "sha512-avutXAFL1ehGvAXtPquu0YK5oz6ctS474iM3vNGQIkswrVhdrS52e3uoMQBzZhNRAIE0jBnUyXWNmSjGHhCFcw=="
+  "resolved" "https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.0.1.tgz"
+  "version" "1.0.1"
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "1.0.0"
@@ -870,17 +894,17 @@
   dependencies:
     "esutils" "^2.0.2"
 
-"effector-react@^22.3.3", "effector-react@>=22.3.3":
-  "integrity" "sha512-qoxBerx8gJ/PgoDec4jep2IK4U2+AMyu+VTXE9h4qZ5HsdiyjfLlZuErGTXtFPkE8tvlyg37/nop5lwNBiXhMA=="
-  "resolved" "https://registry.npmjs.org/effector-react/-/effector-react-22.3.3.tgz"
-  "version" "22.3.3"
+"effector-react@^22.3.4", "effector-react@>=22.3.3":
+  "integrity" "sha512-iyPMjnIW7pUoSuvxumAu4oRan4d8sbXmYPTlRXR75HOag2aH805m+xElyhyXCsQMXxQebjk7/GSC8Caeriv/+A=="
+  "resolved" "https://registry.npmjs.org/effector-react/-/effector-react-22.3.4.tgz"
+  "version" "22.3.4"
   dependencies:
     "use-sync-external-store" "^1.0.0"
 
-"effector@^22.0.2", "effector@^22.3.0", "effector@>=22.2.0":
-  "integrity" "sha512-Nh7IXn8U4emq8YtAZf2+y2Rs6n4W/gjPaNZpZLFOXOIAsRZSNBFjtK1vHTWNKxxmNFZOaZN6XUXdT8FDs0mAdQ=="
-  "resolved" "https://registry.npmjs.org/effector/-/effector-22.3.0.tgz"
-  "version" "22.3.0"
+"effector@^22.0.2", "effector@^22.4.0", "effector@>=22.2.0":
+  "integrity" "sha512-WQ0rboUp1fvkzo2rPymtWzR9isUl8v9McGvBA4g8zvQaTgZnXQ1iCbNj2S54bADGpSNl1CYv1/61vvdbc5Goyw=="
+  "resolved" "https://registry.npmjs.org/effector/-/effector-22.4.0.tgz"
+  "version" "22.4.0"
 
 "electron-to-chromium@^1.4.251":
   "integrity" "sha512-KS6gPPGNrzpVv9HzFVq+Etd0AjZEPr5pvaTBn2yD6KV4+cKW4I0CJoJNgmTG6gUQPAMZ4wIPtcOuoou3qFAZCA=="
@@ -1738,10 +1762,10 @@
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
 
-"nextjs-effector@^0.30.0":
-  "integrity" "sha512-yUQnj9yyzdrxbpZnoM+URa5stooGuEohnKoUpJOPUJPEax3MFaaAnZXxUcuxls2YwQdMGaQaajEYNTWHxhnDyA=="
-  "resolved" "https://registry.npmjs.org/nextjs-effector/-/nextjs-effector-0.30.0.tgz"
-  "version" "0.30.0"
+"nextjs-effector@^0.40.1":
+  "integrity" "sha512-S2GJbOP8DWo5HgWErfb4NpUd3y0ua4SToZB5F2vESYj4o7RWHWVMKJGdXaDGtVnoTqy631fT3Obe1j1KjK21uA=="
+  "resolved" "https://registry.npmjs.org/nextjs-effector/-/nextjs-effector-0.40.1.tgz"
+  "version" "0.40.1"
 
 "node-releases@^2.0.6":
   "integrity" "sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg=="

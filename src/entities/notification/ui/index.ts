@@ -1,3 +1,1 @@
-interface ToastProps {}
-
-export const Toast = ({}: ToastProps) => {}
+export { Notifications } from './Notifications'

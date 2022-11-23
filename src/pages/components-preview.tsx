@@ -14,6 +14,11 @@ import {
 import Image from 'next/image'
 import image from '../../public/photo.jpg'
 import clsx from 'clsx'
+import { Typewriter } from '@/shared/ui/Typewriter'
+import { Provider } from 'effector-react'
+import { fork } from 'effector'
+import { notificationModel } from '@/entities/notification'
+import { Header } from '@/widgets/header'
 
 interface ComponentsPreview {}
 
@@ -35,7 +40,7 @@ const Component = ({
 )
 
 const Row = ({ children }: { children: ReactNode }) => (
-  <div className='mb-7 flex align-top justify-center gap-5 '>{children}</div>
+  <div className='mb-7 w-full flex align-top justify-center gap-5 '>{children}</div>
 )
 
 const Section = ({
@@ -45,7 +50,7 @@ const Section = ({
   children: ReactNode
   title: string
 }) => (
-  <div>
+  <div className='w-full'>
     <div className='text-center'>
       <h1 className='px-3 py-1 text-lg font-medium text-primary bg-primary/5'>
         {title}
@@ -59,9 +64,18 @@ const Section = ({
 )
 
 export const ComponentsPreview = (props: ComponentsPreview) => {
+  const showNotification = () => {
+    notificationModel.addNotification({
+      id: 'test1',
+      message: 'test',
+      title: 'title',
+      type: 'info'
+    })
+  }
+
   return (
     <>
-      <Section title='Button'>
+      {/* <Section title='Button'>
         <Row>
           <Component title='contained'>
             <Button>Button</Button>
@@ -397,9 +411,9 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             />
           </Component>
         </Row>
-      </Section>
+      </Section> */}
 
-      <Section title='Tooltip'>
+      {/* <Section title='Tooltip'>
         <Row>
           <Component title='tooltip'>
             <Tooltip text='OMG THIS IS SO COOL TOOLTIP'>
@@ -413,7 +427,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             </Tooltip>
           </Component>
         </Row>
-      </Section>
+      </Section> */}
 
       {/* <Section title='Input'>
         <Row>
@@ -593,7 +607,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
         </Row>
       </Section> */}
 
-      <Section title='Input'>
+      {/* <Section title='Input'>
         <Row>
           <Component title='standard'>
             <Input />
@@ -736,6 +750,47 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
 
           <Component title='standart with helper text'>
             <Input variant='outlined' password label='With helper text' />
+          </Component>
+        </Row>
+      </Section> */}
+
+      {/* <Section title='Typewriter'>
+        <Row>
+          <Component title='Typewriter'>
+            <Typewriter words={['Test', 'this', 'shit']} />
+          </Component>
+
+          <Component title='Infinity Typewriter'>
+            <Provider value={fork()}>
+              <Typewriter words={['Test', 'this', 'shit']} loop={true} />
+            </Provider>
+          </Component>
+
+          <Component title='Typewriter with custom speed'>
+            <Provider value={fork()}>
+              <Typewriter
+                words={['Soooo', 'laargeeee', 'woooorrrdssss']}
+                deleteSpeed={200}
+                typeSpeed={300}
+                loop={true}
+              />
+            </Provider>
+          </Component>
+        </Row>
+      </Section> */}
+      {/* 
+      <Section title='Notifications'>
+        <Row>
+          <Component title='notification'>
+            <Button onClick={showNotification}>Show</Button>
+          </Component>
+        </Row>
+      </Section> */}
+
+      <Section title='Header'>
+        <Row>
+          <Component title='notification' className='w-full'>
+            <Header />
           </Component>
         </Row>
       </Section>
