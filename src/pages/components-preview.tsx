@@ -75,7 +75,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
 
   return (
     <>
-      {/* <Section title='Button'>
+      <Section title='Button'>
         <Row>
           <Component title='contained'>
             <Button>Button</Button>
@@ -411,7 +411,7 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             />
           </Component>
         </Row>
-      </Section> */}
+      </Section>
 
       {/* <Section title='Tooltip'>
         <Row>
@@ -785,15 +785,15 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             <Button onClick={showNotification}>Show</Button>
           </Component>
         </Row>
-      </Section> */}
-
+      </Section>
+{/* 
       <Section title='Header'>
         <Row>
           <Component title='notification' className='w-full'>
             <Header />
           </Component>
         </Row>
-      </Section>
+      </Section> */}
     </>
   )
 }

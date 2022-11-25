@@ -1,2 +1,2 @@
-export * as logoutModel from './model'
+// export * as logoutModel from './model'
 export * from './ui'

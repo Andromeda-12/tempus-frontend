@@ -3,14 +3,15 @@ import { ThemeProvider } from 'next-themes'
 import { withEffector } from 'nextjs-effector'
 import '@/app/global.css'
 import { Header } from '@/widgets/header'
-import { Sidebar } from '@/widgets/sidebar'
+import { SidebarLayout } from '@/widgets/layouts'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute='class'>
       {/* <Header /> */}
-      <Sidebar />
-      {/* <Component {...pageProps} /> */}
+      <SidebarLayout>
+        <Component {...pageProps} />
+      </SidebarLayout>
     </ThemeProvider>
   )
 }
