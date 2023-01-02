@@ -19,6 +19,8 @@ import { Provider } from 'effector-react'
 import { fork } from 'effector'
 import { notificationModel } from '@/entities/notification'
 import { Header } from '@/widgets/header'
+import { FileUpload, UploadAvatar } from '@/entities/file-upload'
+import AvatarEditor from '@/entities/file-upload/ui/edit'
 
 interface ComponentsPreview {}
 
@@ -411,6 +413,15 @@ export const ComponentsPreview = (props: ComponentsPreview) => {
             />
           </Component>
         </Row>
+      </Section>
+
+      <Section title='upload file'>
+          <Row>
+            <Component title='upload file'>
+              {/* <FileUpload /> */}
+              <UploadAvatar />
+            </Component>
+          </Row>
       </Section>
 
       {/* <Section title='Tooltip'>

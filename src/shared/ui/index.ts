@@ -9,3 +9,6 @@ export { Tooltip } from './Tooltip'
 export { Input, OldInput } from './Input'
 export { HamburgerButton } from './HamburgerButton'
 export { BrandLogo } from './BrandLogo/BrandLogo'
+export * from './Icon'
+
+export * from './ContentContainer'

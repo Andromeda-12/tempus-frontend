@@ -1,25 +1,42 @@
 const plugin = require('tailwindcss/plugin')
+      // 'background-light': '#ffffff',
+      // 'background-dark': '#141b2e',
+      // primary: '#01e3ff',
+      // 'primary-hover': '#01e3e0',
+      // 'primary-active': '#01e3e0',
+      // 'primary-disabled': '#0b7f97',
+      // 'color-light': '#000000',
+      // 'color-dark': '#ffffff',
+      // error: 'rgb(220 38 38)'
+        // f74663
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './src/**/*.{js,ts,jsx,tsx}'
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        'background-light': '#ffffff',
+        'background-light': '#F6FAFE',
         'background-dark': '#141b2e',
-        primary: '#01e3ff',
-        'primary-hover': '#01e3e0',
-        'primary-active': '#01e3e0',
-        'primary-disabled': '#0b7f97',
+        'primary': '#07042E',
+        'primary-hover': '#060429',
+        'primary-active': '#201d43',
+        'primary-disabled': '#838297',
+        'secondary': '#07042E',
+        'secondary-hover': '#060429',
+        'secondary-active': '#201d43',
+        'secondary-disabled': '##838297',
+        'accent': '#f52548',
+        'accent-hover': '#f63b5a',
+        'accent-active': '#f7516d',
+        'accent-disabled': '#93162b',
         'color-light': '#000000',
         'color-dark': '#ffffff',
-        error: 'rgb(220 38 38)'
+        error: '#f74663',
+        'neutral': ''
       },
+
       opacity: {
         7: '.07',
         15: '.15'
@@ -31,7 +48,7 @@ module.exports = {
         'input-shadow': '0 0 0 1px'
       },
       keyframes: {
-        'blinking': {
+        blinking: {
           '0%': {
             opacity: '0',
             transform: 'translateY(-10px)'

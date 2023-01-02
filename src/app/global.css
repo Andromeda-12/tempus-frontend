@@ -1,19 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @layer base {
-  html {
-    font-family: 'Montserrat', system-ui, sans-serif;
-    /* font-family: 'Montserrat', sans-serif; так будет работать*/
-  }
-
   body {
-    @apply bg-background-light dark:bg-background-dark;
+    @apply bg-background-light ;
+    font-family: 'Montserrat', sans-serif;
   }
 }
-
+/* dark:bg-background-dark font-sans */
 @keyframes animation {
   0 {
     stroke-dasharray: 1, 400;
@@ -29,4 +25,56 @@
     stroke-dasharray: 400, 400;
     stroke-dashoffset: -260;
   }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-dense::-webkit-scrollbar {
+  width: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  /* @apply bg-primary; */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-accent;
+  border-radius: 100vh;
+  /* border: 3px solid; 
+  @apply border-primary; */
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-hover;
+}
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-autofill,
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px inset !important;
+  -webkit-text-fill-color: black !important;
 }

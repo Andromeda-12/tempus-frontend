@@ -15,8 +15,8 @@ export const HamburgerButton = ({
     type='button'
     onClick={onClick}
     className={clsx(
-      'inline-flex items-center p-2 text-sm text-gray-500 rounded-lg',
-      'hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
+      'inline-flex items-center p-2 text-sm rounded-lg duration-100',
+      'text-accent hover:text-primary hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent',
       className
     )}
   >
@@ -36,7 +36,7 @@ export const HamburgerButton = ({
       </svg>
     ) : (
       <svg
-        className=' w-6 h-6'
+        className='w-6 h-6'
         fill='currentColor'
         viewBox='0 0 20 20'
         xmlns='http://www.w3.org/2000/svg'

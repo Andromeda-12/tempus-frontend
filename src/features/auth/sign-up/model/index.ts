@@ -34,15 +34,15 @@ sample({
   target: viewerModel.setViewer
 })
 
-sample({
-  clock: viewerModel.registerFx.failData,
-  fn: (error) => ({
-    type: NotificationType.Error,
-    title: 'SignOut Error',
-    message: error.message
-  }),
-  target: notificationModel.setNotification
-})
+// sample({
+//   clock: viewerModel.registerFx.failData,
+//   fn: (error) => ({
+//     type: NotificationType.Error,
+//     title: 'SignOut Error',
+//     message: error.message
+//   }),
+//   target: notificationModel.setNotification
+// })
 
 // redirect to private page
 // sample({
