@@ -5,18 +5,18 @@ import { TaskList } from '@/widgets/task-list'
 export const Dashboard = () => {
   return (
     <div className='w-full h-full flex flex-col'>
-      <h3 className='text-3xl mb-5 text-black'>My Task</h3>
+      <h3 className='text-3xl mb-5 text-black dark:text-color-dark px-1'>My Task</h3>
 
       <div className='grid grid-cols-6 gap-5 overflow-hidden h-full pb-2 px-1'>
         <div className='col-span-6 lg:col-span-4 flex flex-col'>
           <TaskList />
         </div>
 
-        <Card className='hidden lg:flex col-span-2 flex-col  text-black'>
+        <Card className='hidden lg:flex col-span-2 flex-col'>
           <ContentContainer className='h-full flex flex-col'>
             <h4 className='mb-5'>Current task</h4>
 
-            <div className='text-gray-300'>
+            <div className='text-gray-300 dark:text-gray-500'>
               <div className='text-4xl text-center mb-2'>00:00:00</div>
               <div className='text-center mb-5'>
                 <button className='cursor-pointer outline-none focus-visible:ring-4 rounded-full w-fit hover:bg-primary/15 duration-150'>
@@ -26,14 +26,14 @@ export const Dashboard = () => {
               </div>
             </div>
 
-            {true && (
+            {false && (
               <div className='text-center mt-4'>
                 <h2 className='text-lg'>Task not selected</h2>
                 <div className='text-2xl'>🙃</div>
               </div>
             )}
 
-            {false && (
+            {true && (
               <>
                 <Divider />
 
@@ -48,10 +48,10 @@ export const Dashboard = () => {
                       <Avatar />
                     </div>
                   </div>
-
-                  <div className='mb-4 flex-grow h-full flex flex-col overflow-hidden'>
+                  {/* flex-grow h-full flex flex-col  */}
+                  <div className='mb-4 flex flex-col overflow-hidden'>
                     <div className='mb-2'>Description</div>
-                    <div className='flex-grow text-sm  overflow-auto scrollbar scrollbar-dense '>
+                    <div className='text-sm overflow-y-scroll flex-1 scrollbar scrollbar-dense '>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       voluptatibus incidunt odit laudantium saepe corrupti sint
                       voluptatibus incidunt odit laudantium saepe corrupti sint
@@ -65,13 +65,13 @@ export const Dashboard = () => {
                       doloremque!
                     </div>
                   </div>
-
+{/* 
                   <div className='flex justify-evenly'>
                     <Button accent className='py-2 px-10 !rounded-full'>
                       Save
                     </Button>
                     <Button className='py-2 px-10 !rounded-full'>Cancel</Button>
-                  </div>
+                  </div> */}
                 </div>
               </>
             )}

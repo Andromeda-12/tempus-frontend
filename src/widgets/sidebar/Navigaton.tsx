@@ -37,7 +37,7 @@ const NavigationItem = ({
   item: { icon, title, content },
   open
 }: NavigationItemProps) => (
-  <div tabIndex={0} className='flex items-center outline-none focus-visible:ring-4 p-3 text-base font-normal text-gray-900 rounded-2xl dark:text-white hover:bg-gray-100 dark:hover:bg-background-dark'>
+  <div tabIndex={0} className='flex items-center outline-none focus-visible:ring-4 p-3 text-base font-normal text-gray-900 hover:text-accent duration-150 rounded-2xl dark:text-white hover:bg-gray-100 dark:hover:bg-background-dark'>
     {icon && <div>{icon}</div>}
 
     {title && (

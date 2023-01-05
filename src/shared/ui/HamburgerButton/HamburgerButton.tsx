@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { Button } from '../Button'
 
 interface HamburgerButtonProps {
   open: boolean
@@ -15,8 +16,8 @@ export const HamburgerButton = ({
     type='button'
     onClick={onClick}
     className={clsx(
-      'inline-flex items-center p-2 text-sm rounded-lg duration-100',
-      'text-accent hover:text-primary hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent',
+      'inline-flex items-center px-2.5 py-2.5 text-sm rounded-lg duration-100',
+      'text-accent hover:text-background-light dark:hover:text-primary hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent',
       className
     )}
   >

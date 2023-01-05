@@ -25,12 +25,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <ThemeProvider attribute='class'>
-      {/* <Header /> */}
-      {/* <SidebarLayout> */}
-
       <LoaderLayout >{getLayout(<Component {...pageProps} />)}</LoaderLayout>
-
-      {/* </SidebarLayout> */}
     </ThemeProvider>
   )
 }

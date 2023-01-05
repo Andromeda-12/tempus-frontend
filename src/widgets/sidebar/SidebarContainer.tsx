@@ -14,7 +14,7 @@ export const SidebarContainer = ({
     className={clsx(open ? 'w-64' : 'w-16', 'duration-300 h-full ', className)}
     aria-label='Sidebar'
   >
-    <div className='h-full flex flex-col overflow-y-auto overflow-hidden py-4 px-2 bg-gray-50 dark:bg-gray-800 rounded-tr-3xl'>
+    <div className='h-full flex flex-col overflow-y-auto overflow-hidden py-4 px-2 bg-gray-50 shadow-xl dark:bg-neutral rounded-tr-3xl'>
       {children}
     </div>
   </aside>

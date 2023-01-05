@@ -3,16 +3,19 @@ import { PropsWithChildren } from '@/shared/lib'
 
 interface ContentContainer extends PropsWithChildren {
   py?: boolean
+  px?: boolean
 }
 
 export const ContentContainer = ({
   children,
   className,
-  py = true
+  py = true,
+  px = true
 }: ContentContainer) => (
   <div
-    className={clsx(className, 'px-2 sm:px-3 md:px-3 lg:px-7 ', {
-      'py-3': py
+    className={clsx(className, {
+      'py-3': py,
+      'px-2 sm:px-3 md:px-3 lg:px-7': px
     })}
   >
     {children}

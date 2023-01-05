@@ -28,7 +28,7 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 
   return (
     <Button
-      className={clsx('', className)}
+      className={clsx('dark:text-background-light dark:hover:bg-background-dark', className)}
       type='icon'
       variant='text'
       onClick={toggleTheme}

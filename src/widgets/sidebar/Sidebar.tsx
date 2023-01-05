@@ -5,6 +5,7 @@ import { SidebarContainer } from './SidebarContainer'
 import { Navigation } from './Navigaton'
 import { Avatar } from '@/entities/viewer/ui/Avatar'
 import { Icon } from '@/shared/ui/Icon'
+import { ThemeSwitcher } from '@/features/theme-switcher'
 
 const topNavigation = [
   {
@@ -20,6 +21,11 @@ const topNavigation = [
   {
     href: '/team',
     title: 'Team',
+    icon: <Icon name='team' />
+  },
+  {
+    href: '/workspaces',
+    title: 'Workspaces',
     icon: <Icon name='team' />
   }
 ]
@@ -52,9 +58,13 @@ export const Sidebar = ({ open, onToggle, className }: SidebarProps) => {
 
   return (
     <SidebarContainer className={className} open={open}>
+      <div className='flex justify-end items-center mb-2'>
+        <ThemeSwitcher className='mr-0.5' />
+      </div>
+
       <div className={clsx('flex mb-4 flex-wrap justify-end h-14 md:h-auto')}>
-        <div className='basis-1/2 justify-end hidden md:flex'>
-          <HamburgerButton className='mr-1.5' open={open} onClick={onToggle} />
+        <div className='justify-end hidden md:flex'>
+          <HamburgerButton className='mr-0.5' open={open} onClick={onToggle} />
         </div>
       </div>
 

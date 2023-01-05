@@ -8,6 +8,7 @@ interface ButtonProps {
   type?: 'button' | 'icon'
   accent?: boolean
   variant?: 'contained' | 'outline' | 'text'
+  dense?: boolean
   startIcon?: ReactNode
   endIcon?: ReactNode
   withGlow?: boolean
@@ -38,6 +39,7 @@ export const Button = ({
   className,
   type = 'button',
   variant = 'contained',
+  dense,
   accent,
   startIcon,
   endIcon,
@@ -57,6 +59,7 @@ export const Button = ({
           'ring-accent/40 outline-none inline-flex items-center justify-center text-sm font-medium transition duration-150 ease-in-out',
           'focus-visible:ring-4 focus:outline-none',
           type === 'button' ? 'px-5 py-3' : 'px-2.5 py-2.5',
+          dense && 'py-1',
           variant === 'contained' &&
             'bg-accent text-white dark:text-white hover:bg-accent-hover active:bg-accent-hover/70 focus-visible:bg-accent-hover',
           variant === 'outline' &&
@@ -97,7 +100,7 @@ export const Button = ({
         'focus-visible:ring-4 focus:outline-none',
         type === 'button' ? 'px-5 py-3' : 'px-2.5 py-2.5',
         variant === 'contained' &&
-          'bg-primary text-white dark:text-white hover:bg-primary-hover active:bg-primary-hover/70 focus-visible:bg-primary-hover',
+          'bg-background-dark text-white dark:text-white hover:bg-primary-hover active:bg-primary-hover/70 focus-visible:bg-primary-hover',
         variant === 'outline' &&
           'py-[0.563rem] bg-transparent hover:bg-primary/10 active:bg-primary/15 text-primary border border-primary/60 hover:border-primary',
         variant === 'text' &&

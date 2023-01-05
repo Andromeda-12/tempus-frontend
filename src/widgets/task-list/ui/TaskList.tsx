@@ -26,7 +26,7 @@ export const TaskSearch = () => {
 
 export const TaskListHeader = () => {
   return (
-    <div className='border-b border-primary'>
+    <div className='border-b border-primary dark:border-background-dark'>
       <ContentContainer className='flex justify-between'>
         <Button startIcon='+' accent className='py-1.5'>
           New Task
@@ -40,7 +40,7 @@ export const TaskListHeader = () => {
 
 export const Task = () => {
   return (
-    <div className={clsx('text-color-light duration-100 hover:bg-primary/10')}>
+    <div className={clsx('duration-100 hover:bg-primary/10 dark:hover:bg-gray-600/30')}>
       <ContentContainer py={false} className='flex justify-between py-2'>
         <div className='flex items-center'>
           <Avatar className='mr-4' />
@@ -49,7 +49,7 @@ export const Task = () => {
 
         <div className='flex items-center'>
           <div className='mr-4'>00:00:00</div>
-          <button className='cursor-pointer rounded-full w-fit hover:bg-primary/15 duration-150'>
+          <button className='cursor-pointer rounded-full w-fit hover:bg-primary/15 dark:hover:bg-neutral duration-150'>
             <Icon name='play' className='w-9 h-9 relative -right-0.5' />
           </button>
         </div>

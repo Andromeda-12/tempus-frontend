@@ -18,7 +18,7 @@ module.exports = {
     extend: {
       colors: {
         'background-light': '#F6FAFE',
-        'background-dark': '#141b2e',
+        'background-dark': '#161819',
         'primary': '#07042E',
         'primary-hover': '#060429',
         'primary-active': '#201d43',
@@ -34,7 +34,7 @@ module.exports = {
         'color-light': '#000000',
         'color-dark': '#ffffff',
         error: '#f74663',
-        'neutral': ''
+        'neutral': '#242529'
       },
 
       opacity: {
@@ -42,7 +42,8 @@ module.exports = {
         15: '.15'
       },
       scale: {
-        85: '.85'
+        85: '.85',
+        103: '1.03'
       },
       boxShadow: {
         'input-shadow': '0 0 0 1px'
