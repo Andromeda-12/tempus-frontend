@@ -6,6 +6,7 @@ import { Navigation } from './Navigaton'
 import { Avatar } from '@/entities/viewer/ui/Avatar'
 import { Icon } from '@/shared/ui/Icon'
 import { ThemeSwitcher } from '@/features/theme-switcher'
+import { useEffect } from 'react'
 
 const topNavigation = [
   {
@@ -56,13 +57,16 @@ export const Sidebar = ({ open, onToggle, className }: SidebarProps) => {
   //   setOpen(!open)
   // }
 
+
+
+
   return (
     <SidebarContainer className={className} open={open}>
-      <div className='flex justify-end items-center mb-2'>
+      <div className='hidden md:flex justify-end items-center mb-2 '>
         <ThemeSwitcher className='mr-0.5' />
       </div>
 
-      <div className={clsx('flex mb-4 flex-wrap justify-end h-14 md:h-auto')}>
+      <div className={clsx('hidden md:flex  mb-4 flex-wrap justify-end h-14 md:h-auto')}>
         <div className='justify-end hidden md:flex'>
           <HamburgerButton className='mr-0.5' open={open} onClick={onToggle} />
         </div>

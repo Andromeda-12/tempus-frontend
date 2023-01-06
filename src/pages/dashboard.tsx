@@ -4,7 +4,7 @@ import { TaskList } from '@/widgets/task-list'
 
 export const Dashboard = () => {
   return (
-    <div className='w-full h-full flex flex-col'>
+    <div className='w-full h-screen flex flex-col py-5'>
       <h3 className='text-3xl mb-5 text-black dark:text-color-dark px-1'>My Task</h3>
 
       <div className='grid grid-cols-6 gap-5 overflow-hidden h-full pb-2 px-1'>
@@ -14,8 +14,8 @@ export const Dashboard = () => {
 
         <Card className='hidden lg:flex col-span-2 flex-col'>
           <ContentContainer className='h-full flex flex-col'>
-            <h4 className='mb-5'>Current task</h4>
-
+            <h4 className='mb-5 text-[#2b2d31]'>Current task</h4>
+            
             <div className='text-gray-300 dark:text-gray-500'>
               <div className='text-4xl text-center mb-2'>00:00:00</div>
               <div className='text-center mb-5'>
@@ -51,7 +51,7 @@ export const Dashboard = () => {
                   {/* flex-grow h-full flex flex-col  */}
                   <div className='mb-4 flex flex-col overflow-hidden'>
                     <div className='mb-2'>Description</div>
-                    <div className='text-sm overflow-y-scroll flex-1 scrollbar scrollbar-dense '>
+                    <div className='text-sm overflow-y-scroll pr-2 flex-1 scrollbar scrollbar-dense '>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       voluptatibus incidunt odit laudantium saepe corrupti sint
                       voluptatibus incidunt odit laudantium saepe corrupti sint

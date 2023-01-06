@@ -6,8 +6,14 @@
 
 @layer base {
   body {
-    @apply bg-background-light dark:bg-gradient-to-br dark:from-background-dark dark:to-neutral;
     font-family: 'Montserrat', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    @apply scrollbar;
+  }
+
+  body::before {
+    content: '';
+    @apply fixed top-0 bottom-0 right-0 left-0 -z-10 bg-background-light dark:bg-gradient-to-br dark:from-background-dark dark:to-neutral;
   }
 }
 /* dark:bg-background-dark font-sans */
@@ -46,11 +52,11 @@ a {
 
 .scrollbar::-webkit-scrollbar-track {
   border-radius: 100vh;
-  /* @apply bg-primary; */
+  @apply bg-neutral; 
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-accent;
+  @apply bg-background-dark;
   border-radius: 100vh;
   /* border: 3px solid; 
   @apply border-primary; */

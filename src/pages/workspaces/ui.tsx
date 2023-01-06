@@ -1,5 +1,6 @@
 import { Button, Card } from '@/shared/ui'
 import { WorkspaceList } from '@/entities/workspace'
+import { Head } from 'next/document'
 
 const workspaces = [
   {
@@ -64,21 +65,77 @@ const workspaces = [
     title: 'Some else workspace',
     projectsCount: 3,
     own: false
+  },
+  {
+    id: 10,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 11,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 12,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 13,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 14,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 15,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 16,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
+  },
+  {
+    id: 17,
+    cover: '',
+    title: 'Some else workspace',
+    projectsCount: 3,
+    own: false
   }
 ]
 
 export const Workspaces = () => {
   return (
-    <div className=' h-full '>
+    <div className='py-5'>
       {/* <div className='px-5 py-2 bg-neutral w-fit rounded-2xl mb-5 text-sm'>
         Create workspace
       </div> */}
-{/* overflow-hidden flex flex-col */}
+      {/* overflow-hidden flex flex-col */}
       <Button dense className='bg-neutral !rounded-full mb-7'>
         Create workspace
       </Button>
       {/* overflow-y-scroll */}
-      <div className='h-full scrollbar  flex-1 pr-2'>
+      <div className='scrollbar'>
         <WorkspaceList workspaces={workspaces} />
       </div>
     </div>
