@@ -28,7 +28,7 @@ export const Icon = ({ name, size = 'md', className, ...props }: IconProps) => {
       )}
       {...props}
     >
-      <use xlinkHref={`${fileName}#${name}`} />
+      <use xlinkHref={`/${fileName}#${name}`} />
     </svg>
   )
 }

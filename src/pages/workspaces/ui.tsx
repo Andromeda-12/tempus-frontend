@@ -1,6 +1,5 @@
-import { Button, Card } from '@/shared/ui'
+import { Button } from '@/shared/ui'
 import { WorkspaceList } from '@/entities/workspace'
-import { Head } from 'next/document'
 
 const workspaces = [
   {
@@ -127,14 +126,10 @@ const workspaces = [
 export const Workspaces = () => {
   return (
     <div className='py-5'>
-      {/* <div className='px-5 py-2 bg-neutral w-fit rounded-2xl mb-5 text-sm'>
-        Create workspace
-      </div> */}
-      {/* overflow-hidden flex flex-col */}
-      <Button dense className='bg-neutral !rounded-full mb-7'>
+      <Button className='bg-neutral !rounded-full py-2 mb-7'>
         Create workspace
       </Button>
-      {/* overflow-y-scroll */}
+
       <div className='scrollbar'>
         <WorkspaceList workspaces={workspaces} />
       </div>
