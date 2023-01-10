@@ -3,17 +3,24 @@ import clsx from 'clsx'
 interface IconProps {
   // ref: ReactRef
   name: string
-  size?: 'sm' | 'md' | 'xl'
+  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl'
   className?: string
 }
 
 const sizeMap = {
-  sm: 'h-5 w-5',
-  md: 'h-6 w-6',
-  xl: 'h-8 w-8'
+  xs: 'w-5 h-5',
+  sm: 'w-5 h-5',
+  base: 'w-6 h-6',
+  lg: 'w-7 h-7',
+  xl: 'w-8 h-8'
 }
 
-export const Icon = ({ name, size = 'md', className, ...props }: IconProps) => {
+export const Icon = ({
+  name,
+  size = 'base',
+  className,
+  ...props
+}: IconProps) => {
   const fileName = 'iconsSprite.svg'
 
   return (

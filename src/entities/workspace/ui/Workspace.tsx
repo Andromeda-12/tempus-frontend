@@ -1,5 +1,5 @@
-import { Card } from '@/shared/ui'
-import { Cover } from './Cover'
+import { PropsWithClassName } from '@/shared/lib'
+import { Card, CardCover } from '@/shared/ui'
 
 export interface WorkspaceProps {
   workspace: {
@@ -10,23 +10,19 @@ export interface WorkspaceProps {
   }
 }
 
-export const Workspace = ({
-  workspace: { cover, projectsCount, title, own }
-}: WorkspaceProps) => {
+export const Workspace = ({ workspace }: WorkspaceProps) => {
+  const { cover, projectsCount, title, own } = workspace
+
   return (
-    <Card className='flex flex-col justify-end cursor-pointer hover:scale-103 duration-300 relative'>
-      {own && (
-        <div className='absolute right-2 top-2 bg-background-light/60 dark:bg-background-dark/40 py-1 px-2 text-xs rounded-full'>
-          own
-        </div>
-      )}
+    <Card className='relative' withHover>
+      {own && <OwnMark />}
+      <CardCover cover={cover} />
 
-      <Cover cover={cover} />
-
-      <div className='flex flex-col px-5 py-2'>
+      <div className='px-5 py-2'>
         <div className='text-ellipsis font-medium overflow-hidden whitespace-nowrap h-[20px] mb-2'>
           {title}
         </div>
+        
         <div className='font-light text-sm text-color-light/60 dark:text-color-dark/50'>
           Projects: {projectsCount}
         </div>
@@ -34,3 +30,9 @@ export const Workspace = ({
     </Card>
   )
 }
+
+const OwnMark = () => (
+  <div className='absolute right-2 top-2 bg-background-light/60 dark:bg-background-dark/40 py-1 px-2 text-xs rounded-full'>
+    own
+  </div>
+)

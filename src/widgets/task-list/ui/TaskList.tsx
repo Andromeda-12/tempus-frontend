@@ -32,6 +32,10 @@ export const TaskListHeader = () => {
           New Task
         </Button>
 
+        <div className='px-2 flex items-center'>
+          Filters
+        </div>
+
         {/* <TaskSearch /> */}
       </ContentContainer>
     </div>

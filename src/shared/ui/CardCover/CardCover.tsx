@@ -1,12 +1,15 @@
-interface CoverProps {
+import clsx from 'clsx'
+
+interface CardCoverProps {
+  className?: string
   cover: string
 }
 
-export const Cover = ({ cover }: CoverProps) => {
+export const CardCover = ({ className, cover }: CardCoverProps) => {
   if (cover)
     return (
       <div
-        className='h-52 bg-cover bg-center'
+        className={clsx('h-52 bg-cover bg-center', className)}
         style={{ backgroundImage: `url(${cover})` }}
       ></div>
     )

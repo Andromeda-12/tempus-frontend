@@ -11,5 +11,7 @@ export { HamburgerButton } from './HamburgerButton'
 export { BrandLogo } from './BrandLogo/BrandLogo'
 export * from './Icon'
 export * from './Tabs'
+export * from './PageCover'
+export * from './CardCover'
 
 export * from './ContentContainer'

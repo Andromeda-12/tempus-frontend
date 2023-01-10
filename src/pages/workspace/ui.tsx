@@ -1,5 +1,8 @@
-import { Button, Card, ContentContainer } from '@/shared/ui'
+import { Button, Card, ContentContainer, Icon } from '@/shared/ui'
 import { WorkspaceList } from '@/entities/workspace'
+import { Avatar } from '@/entities/viewer/ui/Avatar'
+import { PageCover } from '@/shared/ui/PageCover/PageCover'
+import { ProjectList } from '@/entities/project'
 
 const workspaces = {
   id: 1,
@@ -12,57 +15,20 @@ const workspaces = {
 export const Workspace = ({}) => {
   return (
     <div className='h-screen flex flex-col py-5 bg-cover bg-center relative'>
+      <div className='h-full'>
+        <PageCover cover='' />
 
-      <div className='h-full !bg-neutral/0'>
-        <div
-          className='h-44 md:h-64 bg-cover bg-center rounded-xl'
-          style={{ backgroundImage: `url(/${workspaces.cover})` }}
-        ></div>
         <ContentContainer className='mt-1'>
-          <h2 className='text-xl '>{workspaces.title}</h2>
+          <h2 className='text-xl mb-2'>{workspaces.title}</h2>
 
-          <div className='mb-7 mt-2 text-xs'>8 members</div>
+          <div className='mb-7 mt-2 text-xs'>21 members</div>
 
-          <div className='grid gap-7 grid-cols-[repeat(auto-fill,minmax(272px,1fr))]'>
-            <Card>
-              <ContentContainer>
-                <div>Project 1</div>
-                <div className='text-sm mt-1 opacity-60'>5 assigned to you</div>
-                <div className='text-xs mt-1 opacity-60'>21 active tasks</div>
-              </ContentContainer>
-            </Card>
-
-            <Card>
-              <ContentContainer>
-                <div>Project 1 (21 tasks)</div>
-                <div className='text-sm mt-1 opacity-60'>5 assigned to you</div>
-              </ContentContainer>
-            </Card>
-
-            <Card>
-              <ContentContainer>
-                <div>Project 1</div>
-                <div className='text-sm mt-1 opacity-60'>5 assigned to you</div>
-                <div className='text-xs mt-1 opacity-60'>21 active tasks</div>
-              </ContentContainer>
-            </Card>
-
-            <Card>
-              <ContentContainer>
-                <div>Project 1</div>
-                <div className='text-sm mt-1 opacity-60'>5 assigned to you</div>
-                <div className='text-xs mt-1 opacity-60'>21 active tasks</div>
-              </ContentContainer>
-            </Card>
-
-            <Card>
-              <ContentContainer>
-                <div>Project 1</div>
-                <div className='text-sm mt-1 opacity-60'>5 assigned to you</div>
-                <div className='text-xs mt-1 opacity-60'>21 active tasks</div>
-              </ContentContainer>
-            </Card>
+          <div className='py-0.5 mb-4 px-8 text-sm border rounded-2xl w-fit'>
+            Filters
           </div>
+
+          <ProjectList />
+
         </ContentContainer>
       </div>
     </div>

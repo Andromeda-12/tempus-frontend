@@ -13,7 +13,10 @@ const NotFoundPage = () => {
         <div className='text-3xl mb-3'>Oops 😯</div>
         <div className='text-xl mb-5'>There is nothing here</div>
 
-        <Button accent onClick={goBack}>Go back</Button>
+        <div className='mb-2 text-2xl'>👇</div>
+        <Button accent onClick={goBack}>
+          Go back
+        </Button>
       </div>
     </div>
   )
